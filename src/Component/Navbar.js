@@ -5,7 +5,7 @@ export default function Navbar(props) {
     <>
     <div>
     
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
   <div className="container-fluid">
 
     <a className="navbar-brand" href="/">{props.tittle}</a>  
@@ -18,9 +18,7 @@ export default function Navbar(props) {
         <li className="nav-item">
           <a className="nav-link active" aria-current="page" href="/">Home</a>
         </li>
-        <li className="nav-item">
-          <a className="nav-link" href="/">Link</a>
-        </li>
+       
         <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
@@ -34,14 +32,18 @@ export default function Navbar(props) {
             <li><a className="dropdown-item" href="/">Something else here</a></li>
           </ul>
         </li>
-        <li className="nav-item">
-          <a className="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
+        
       </ul>
-      <form className="d-flex" role="search">
+      <form className="d-flex me-5" role="search">
         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button className="btn btn-outline-success" type="submit">Search</button>
+        <button className="btn btn-outline-success mr-6" type="submit">Search</button>
       </form>
+      <div className="form-check form-switch ms-2">  {/*this is for a switch*/}
+          <input className="form-check-input" onClick={props.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
+           <label className={`form-check-label text-${props.mode==='light'?'dark':'light'}`} htmlFor="flexSwitchCheckDefault">Enable Dark Mode</label>
+      
+      {/*${props.mode==='light'?'dark':'light'}  change text based on mode */ }
+      </div>
     </div>
   </div>
 </nav>
@@ -60,6 +62,6 @@ Navbar.propTypes = {
 //if any attribute is not written it will by default takes this
 //i.e <Navbar  aboutReact="it is React App"  />  in App.js .it will take this value for aboutReact
 Navbar.defaultProps = {
-     tittle: "Default tiitle",
+     tittle: "Radhika",
 
 };
