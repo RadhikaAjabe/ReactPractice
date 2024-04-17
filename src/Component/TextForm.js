@@ -29,12 +29,16 @@ const handleClearClick=()=>{
     props.showAlert("text cleared","success") 
 }
 
-const handleCopy=()=>{
-  
-    let text=document.getElementById("examplehtmlFormControlTextarea1");   
+const handleCopy=()=>{  
+
+    let text=document.getElementById("examplehtmlFormControlTextarea1");    //this can be also done
+    console.log("Radhika")
     text.select()    //it selects text
     navigator.clipboard.writeText(text.value)   //copies text
-    props.showAlert("Text copied to clipboard","success")  
+ 
+
+    props.showAlert("Text copied to clipboard","success") 
+   
 }
 
 //still we will not be able to write(change) content in textarea so add onchange event and in it setText to 
@@ -52,7 +56,10 @@ const handleSpaceRemoval=()=>{
 
 
     return (
+        
+        
         <div style={{color:props.mode==='dark'?'white':'black'}}>
+          
         <div className='container' > 
                       {/*    <h1>{props.heading} - {text} </h1>    //this can also be done  */}
            <h1>{props.heading}</h1>

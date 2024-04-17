@@ -1,6 +1,10 @@
 import React ,{useState} from 'react'
+//import { useOutletContext } from 'react-router-dom'
+
 
 export default function About() {
+ // const {greating}=useOutletContext()
+  //console.log(greating)
     const [myStyle,setMyStyle] = useState({
         color:"black",
         backgroundColor:"white"
