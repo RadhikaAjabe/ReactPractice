@@ -43,7 +43,7 @@ export default function Navbar(props) {
 </nav>
       
     </div>
-  {/*   <Outlet/>    need to add this in a component in which we are routing another component atherwise code will not work */}
+   <Outlet/>       {/*  need to add this in a component in which we are routing another component atherwise code will not work */}
     </>
   )
 }
