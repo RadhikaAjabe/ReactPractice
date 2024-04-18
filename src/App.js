@@ -25,9 +25,18 @@ function App() {
             setAlert(null)       //alert should desappear after 1.5 sec
       }  , 1500)
   }
+  const removeBodyClasses=()=>{
+    document.body.classList.remove('bg-light')
+    document.body.classList.remove('bg-dark')
+    document.body.classList.remove('bg-warning')
+    document.body.classList.remove('bg-success')
+    document.body.classList.remove('bg-danger')
+  }
 
-  const toggleMode=()=>{        //function
-      if(mode === 'light'){
+  const toggleMode=(cls)=>{  //function
+    removeBodyClasses()    //if we didn't do this if we click on one pallet it will show this colour on background.after that if we click on onother palate it will still shows privious clor on bg.therefore we must first remove previous className(i.e.  color)
+    document.body.classList.add('bg-'+cls)   //adds css class to body element of webpage.its using string concatenation to create a class anmelike "bg-" flollowed by value of 'cls'
+     /* if(mode === 'light'){
         setMode('dark')
         document.body.style.backgroundColor='#042743'   //grey
         showAlert("Dark mode has been enabled","success")
@@ -35,7 +44,7 @@ function App() {
         setMode('light')
         document.body.style.backgroundColor='white'
         showAlert("Light mode has been enabled","success")
-      }
+      }*/
   }
   return (
     <>

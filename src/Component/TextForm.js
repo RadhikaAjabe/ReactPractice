@@ -77,8 +77,16 @@ const handleSpaceRemoval=()=>{
       <div className='container my-3' > 
           <h1>Your text summary</h1>
          {/* <p>{(text.split(" ")).length} words and {text.length} characters</p>    //if we dont type any word then also it is giving word count 1*/}
-           <p>{(text.split(" ")).filter((element)=>{return element.length!==0}).length} words and {text.length} characters</p>   
-          <h2>Preview</h2>
+           {/*<p>{(text.split(" ")).filter((element)=>{return element.length!==0}).length} words and {text.length} characters</p>   
+          above code will give word count 1 even if we write one word on one line like This
+          hi
+          how 
+          you
+      threfore write like this
+      <p>{(text.split(/\s+/)).filter((element)=>{return element.length!==0}).length} words and {text.length} characters</p>
+        */} 
+        <p>{(text.split(/\s+/)).filter((element)=>{return element.length!==0}).length} words and {text.length} characters</p>
+            <h2>Preview</h2>
           <p>{text.length>0?text:"Nothing to preview!"}</p>
       </div>
       </div>
