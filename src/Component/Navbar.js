@@ -1,6 +1,6 @@
 import React from 'react'
 import propTypes from 'prop-types'
-import {Link}
+import {Link,Outlet}
 from 'react-router-dom'
 
 
@@ -57,6 +57,6 @@ Navbar.propTypes = {
 //if any attribute is not written it will by default takes this
 //i.e <Navbar  aboutReact="it is React App"  />  in App.js .it will take this value for aboutReact
 Navbar.defaultProps = {
-     tittle: "Radhika",
+     tittle: "TextUtils App",
 
 };

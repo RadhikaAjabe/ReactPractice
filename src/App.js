@@ -42,18 +42,18 @@ function App() {
   {/*<Navbar tittle="Radhika App" aboutReact="About React"/>*/}
   <Router>
      
-   {/*<Navbar  aboutReact="About React"  mode={mode} toggleMode={toggleMode}/>   */}
+   <Navbar  aboutReact="About React"  mode={mode} toggleMode={toggleMode}/>   
      <Alert alert={alert}/> 
    <div  className='container'>   
       
        <Routes>
-        <Route element={<Navbar  aboutReact="About React"  mode={mode} toggleMode={toggleMode}/>}>  
+       {/*  <Route element={<Navbar  aboutReact="About React"  mode={mode} toggleMode={toggleMode}/>}>  */}
           
-          <Route path='/' element={<TextForm heading="Fill this Form" mode={mode}  showAlert={showAlert}/>}/>
+          <Route path='/' element={<TextForm heading="Word counter,character counter" mode={mode}  showAlert={showAlert}/>}/>
           
           <Route path='/about' element={ <About/>}/>
         
-  </Route>   
+ {/* </Route>    */}
 
       </Routes>
    </div>
